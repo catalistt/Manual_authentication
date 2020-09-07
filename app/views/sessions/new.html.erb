@@ -1,0 +1,17 @@
+<h1> Log in </h1>
+<%= flash.now[:notice] if flash[:notice] %>
+<%= form_with url: sessions_path, local: true do %>
+	<div class="field">
+		<%= label_tag :email %>
+		<%= email_field_tag :email, params[:email], placeholder: "Enter your email adreess", required: true %>
+	</div>
+	<div class="field">
+		<%= label_tag :password %>
+		<%= text_field_tag :password, params[:password], placeholder: "password", required: true %>
+	</div>
+	<div class="field">
+		<%= label_tag :password_confirmation %>
+		<%= text_field_tag :password_confirmation, params[:password_confirmation], placeholder: "password", required: true %>
+	</div>
+	<%= submit_tag 'Log in' %>
+<% end %>
